@@ -9,4 +9,15 @@
 import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
+    // MARK: Outlets
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.minimumZoomScale = 1/25
+            scrollView.maximumZoomScale = 1.0
+            scrollView.delegate = self
+            scrollView.addSubview(imageView)
+        }
+    }
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
 }
