@@ -42,4 +42,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    // MARK: ScrollView Delegate Methods
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
 }
