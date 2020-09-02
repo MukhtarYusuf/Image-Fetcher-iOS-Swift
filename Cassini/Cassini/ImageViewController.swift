@@ -47,4 +47,19 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }
     
+    // MARK: Utilities
+    private func fetchImage() {
+        if let url = imageURL {
+            spinner.startAnimating()
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let urlContents = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    if let imageData = urlContents, url == self?.imageURL {
+                        self?.image = UIImage(data: imageData)
+                    }
+                }
+            }
+        }
+    }
+    
 }
