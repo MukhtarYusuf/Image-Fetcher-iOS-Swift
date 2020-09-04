@@ -62,4 +62,10 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if imageView.image == nil {
+            fetchImage()
+        }
+    }
 }
