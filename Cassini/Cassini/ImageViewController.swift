@@ -62,6 +62,14 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    // MARK: ViewController Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if imageURL == nil {
+            imageURL = DemoURLs.stanford
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if imageView.image == nil {
