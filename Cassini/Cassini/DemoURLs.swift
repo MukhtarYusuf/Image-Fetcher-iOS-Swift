@@ -18,5 +18,12 @@ struct DemoURLs {
             "Earth" : "https://www.nasa.gov/sites/default/files/wave_earth_mosiac_3.jpg",
             "Saturn" : "https://www.nasa.gov/sites/default/files/saturn_collage.jpg"
         ]
+        
+        var urls = Dictionary<String, URL>()
+        for (key, value) in NASAURLStrings {
+            urls[key] = URL(string: value)
+        }
+        
+        return urls
     }()
 }
