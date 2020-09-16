@@ -30,4 +30,12 @@ class CassiniViewController: UIViewController {
     }
 }
 
+extension UIViewController {
+    var contents: UIViewController {
+        if let navCon = self as? UINavigationController {
+            return navCon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
 }
